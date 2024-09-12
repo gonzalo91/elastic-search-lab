@@ -7,9 +7,12 @@ import { IndexManagmentModule } from './index_managment/index_managment.module';
 import { OperationsController } from './operations/operations.controller';
 import { OperationsService } from './operations/operations.service';
 import { OperationsModule } from './operations/operations.module';
+import { ElasticsearchModule } from './elasticsearch/elasticsearch.module';
+import { CustomCustomElasticsearchModule } from './custom_custom_elasticsearch/custom_custom_elasticsearch.module';
+import { CustomElasticsearchModule } from './custom_elasticsearch/custom_elasticsearch.module';
 
 @Module({
-  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule],
+  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule, ElasticsearchModule, CustomCustomElasticsearchModule, CustomElasticsearchModule],
   controllers: [AppController, OperationsController],
   providers: [AppService, OperationsService],
 })
