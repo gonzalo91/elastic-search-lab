@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { CrudModule } from './crud/crud.module';
 import { SharedModule } from './shared/shared.module';
 import { IndexManagmentModule } from './index_managment/index_managment.module';
-import { OpeartionsModule } from './opeartions/opeartions.module';
+import { OperationsController } from './operations/operations.controller';
+import { OperationsService } from './operations/operations.service';
+import { OperationsModule } from './operations/operations.module';
 
 @Module({
-  imports: [CrudModule, SharedModule, IndexManagmentModule, OpeartionsModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule],
+  controllers: [AppController, OperationsController],
+  providers: [AppService, OperationsService],
 })
 export class AppModule {}
