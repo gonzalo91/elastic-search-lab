@@ -1,9 +1,10 @@
 ### Index management
-- Create an index
-- Index an "index"
-- Adding a column to an index (Check if it requires a total reindexing of previous rows, and a calculated index, let's say if Column A & B, value of column C will be a_value:b_value )
-- Define a column alias
-- For the main index, define statically the mapping
+- For the main index, define statically the mapping [ok]
+- Create an index [ok]
+- Index an "index" [ok]
+- Adding a column to an index (Check if it requires a total reindexing of previous rows, and a calculated index, let's say if Column A & B, value of column C will be a_value:b_value ) [there isn't a computed property feature in ES]
+- Define a column alias [no column alias?]
+- Bulk data [ok]
 
 
 ### Module CRUD

@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
     id: string;               // Unique identifier for the product
     name: string;             // Name of the product
     description: string;      // Detailed description for full-text search
