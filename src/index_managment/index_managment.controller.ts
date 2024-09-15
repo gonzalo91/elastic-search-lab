@@ -9,9 +9,11 @@ export class IndexManagmentController {
     @Get()
     async createProductIndex(): Promise<void> {
         await this.indexManagementService.createProductIndex();
-        const iterations = 10000000 - 2000000 / 10000
+    }
 
-        for(let i = 0; i < iterations; i++) {
+    @Get('bulk-products')
+    async bulkProducts(): Promise<void> {
+        for(let i = 0; i < 100; i++) {
             await this.indexManagementService.bulkIndexProducts();
         }
         return;
