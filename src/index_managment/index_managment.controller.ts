@@ -15,8 +15,7 @@ export class IndexManagmentController {
     async bulkProducts(): Promise<void> {
         for(let i = 0; i < 100; i++) {
             await this.indexManagementService.bulkIndexProducts();
-        }
-        return;
+        }        
     }
 
 }

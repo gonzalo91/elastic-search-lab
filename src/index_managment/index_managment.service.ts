@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { INDICES } from 'src/custom_elasticsearch/constants';
 import { SearchService } from 'src/custom_elasticsearch/search.service';
 import { Product } from 'src/shared/entities/product.entity';
 
@@ -8,11 +9,11 @@ export class IndexManagmentService {
     constructor(private readonly searchService: SearchService) {}
 
     async createProductIndex(): Promise<void> {
-        const indexExists = await this.searchService.search.indices.exists({ index: 'products' });
+        const indexExists = await this.searchService.search.indices.exists({ index: INDICES.PRODUCT_INDEX });
 
         if (!indexExists) {
           await this.searchService.search.indices.create({
-            index: 'products',
+            index: INDICES.PRODUCT_INDEX,
             body: {
               mappings: {
                 properties: {
@@ -49,7 +50,7 @@ export class IndexManagmentService {
 
     async getProductCount(): Promise<number> {
         const body = await this.searchService.search.count({
-          index: 'products',
+          index: INDICES.PRODUCT_INDEX,
         });
     
         return body.count;
@@ -64,7 +65,7 @@ export class IndexManagmentService {
         products.forEach((product, index) => {
           const id = currentCount + index + 1;  
           bulkOperations.push(
-            { index: { _index: 'products',  } }, 
+            { index: { _index: INDICES.PRODUCT_INDEX,  } }, 
             product  // Actual product data to be indexed
           );
         });
