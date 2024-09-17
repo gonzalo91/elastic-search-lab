@@ -1,3 +1,3 @@
 export enum INDICES {
-    PRODUCT_INDEX = 'product',
+    PRODUCT_INDEX = 'products',
 }

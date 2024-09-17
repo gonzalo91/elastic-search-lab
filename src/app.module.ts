@@ -8,9 +8,10 @@ import { OperationsController } from './operations/operations.controller';
 import { OperationsService } from './operations/operations.service';
 import { OperationsModule } from './operations/operations.module';
 import { CustomElasticsearchModule } from './custom_elasticsearch/custom_elasticsearch.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule,  CustomElasticsearchModule],
+  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule,  CustomElasticsearchModule, ProductsModule],
   controllers: [AppController, OperationsController],
   providers: [AppService, OperationsService,],
 })
