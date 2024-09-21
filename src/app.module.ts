@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CrudModule } from './crud/crud.module';
 import { SharedModule } from './shared/shared.module';
 import { IndexManagmentModule } from './index_managment/index_managment.module';
 import { OperationsController } from './operations/operations.controller';
@@ -11,7 +10,7 @@ import { CustomElasticsearchModule } from './custom_elasticsearch/custom_elastic
 import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [CrudModule, SharedModule, IndexManagmentModule, OperationsModule,  CustomElasticsearchModule, ProductsModule],
+  imports: [SharedModule, IndexManagmentModule, OperationsModule,  CustomElasticsearchModule, ProductsModule],
   controllers: [AppController, OperationsController],
   providers: [AppService, OperationsService,],
 })

@@ -28,6 +28,7 @@ export class ProductsService {
 
   async findAll() {
     return await this.searchService.search.search({
+      index: INDICES.PRODUCT_INDEX,
       size: 100,      
       from: Math.floor(Math.random() * 1001)
     });

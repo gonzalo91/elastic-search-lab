@@ -6,6 +6,7 @@ import { CustomElasticsearchModule } from 'src/custom_elasticsearch/custom_elast
 @Module({
     controllers: [OperationsController, ],
     providers: [OperationsService, ],
+    imports: [CustomElasticsearchModule, ]
     
 })
 export class OperationsModule {}
